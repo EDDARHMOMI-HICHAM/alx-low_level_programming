@@ -8,32 +8,25 @@
 
 int main(void)
 {
-int num = 0;
+int i, j;
 
-while (num < 10)
+for (i = 0; i < 10; i++)
 {
-int next_num = num + 1;
-
-while (next_num < 10)
+for (j = i; j < 10; j++)
 {
-putchar((num % 10) + '0');
-putchar(',');
-putchar(' ');
-putchar((next_num % 10) + '0');
+if (i != j)
+{
+putchar(i + '0');
+putchar(j + '0');
 
-if (num != 8 || next_num != 9)
+if (i < 8 || j < 9)
 {
 putchar(',');
 putchar(' ');
 }
-
-next_num++;
 }
-
-num++;
 }
-
+}
 putchar('\n');
-
-return (0);
+return 0;
 }
