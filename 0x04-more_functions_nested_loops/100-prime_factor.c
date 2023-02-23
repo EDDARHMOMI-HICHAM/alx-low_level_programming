@@ -9,8 +9,8 @@
 
 int main(void)
 {
-long long int num = 612852475143;
-long long int factor = 2;
+long int num = 612852475143;
+long int factor = 2;
 
 while (num > 1)
 {
@@ -24,7 +24,7 @@ factor++;
 }
 }
 
-printf("%lld\n", factor);
+printf("%ld\n", factor);
 
 return (0);
 }
