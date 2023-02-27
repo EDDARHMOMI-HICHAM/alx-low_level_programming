@@ -12,9 +12,9 @@
 
 void swap_int(int *a, int *b)
 {
-int k = *a;
-*a = *b;
-*b = *a;
+*a = *a + *b;
+*b = *a - *b;
+*a = *a - *b;
 
 
 }
