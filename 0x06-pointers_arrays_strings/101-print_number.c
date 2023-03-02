@@ -9,17 +9,20 @@ void print_number(int n)
 int digits = 1;
 int copy = n;
 
-if (n < 0) {
+if (n < 0)
+{
 _putchar('-');
 copy = -copy;
 }
 
-while (copy / 10 > 0) {
+while (copy / 10 > 0)
+{
 digits *= 10;
 copy /= 10;
 }
 
-while (digits >= 1) {
+while (digits >= 1)
+{
 _putchar((n / digits) % 10 + '0');
 digits /= 10;
 }
