@@ -4,6 +4,8 @@
  *
  * Return: The square root of n, or -1 if n does not have a natural square root
  */
+
+int _sqrt_helper(int n, int i);
 int _sqrt_recursion(int n)
 {
 if (n < 0)
