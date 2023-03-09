@@ -10,23 +10,15 @@
  */
 int is_palindrome(char *s)
 {
-int i, j;
-
 if (s == NULL) {
 return (0);
 }
 
-i = 0;
-j = strlen(s) - 1;
+int len = strlen(s);
 
-while (i < j) {
-if (s[i] != s[j]) {
-return (0);
-}
-
-i++;
-j--;
-}
-
+if (len <= 1) {
 return (1);
+}
+
+return (strncmp(s, s + len - 1, 1) == 0 && is_palindrome(s + 1));
 }
