@@ -20,5 +20,9 @@ if (len <= 1) {
 return (1);
 }
 
-return (strncmp(s, s + len - 1, 1) == 0 && is_palindrome(s + 1));
+if (s[0] == s[len - 1]) {
+return (is_palindrome(s + 1) && 1);
+}
+
+return (0);
 }
