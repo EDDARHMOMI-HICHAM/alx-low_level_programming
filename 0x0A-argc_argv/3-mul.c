@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * main - Entry point. Multiplies two numbers.
- * @argc: The number of arguments passed to the program.
- * @argv: An array of strings containing the arguments passed to the program.
+ * main - multiplies two numbers
+ * @argc: the number of arguments passed to the program
+ * @argv: an array of strings containing the arguments
  *
- * Return: 0 if successful, 1 if there is an error.
+ * Return: 0 if the program is successful, otherwise 1
  */
 int main(int argc, char *argv[])
 {
-int num1, num2, result;
+int num1, num2, product;
 
 if (argc != 3)
 {
@@ -21,9 +21,9 @@ return (1);
 num1 = atoi(argv[1]);
 num2 = atoi(argv[2]);
 
-result = num1 * num2;
+product = num1 *num2;
 
-printf("%d\n", result);
+printf("%d\n", product);
 
 return (0);
 }
