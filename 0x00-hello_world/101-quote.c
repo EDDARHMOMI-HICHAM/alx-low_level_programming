@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point of the program
+ * main - Ent
  *
  * Return: Always 1 (Error)
  */
