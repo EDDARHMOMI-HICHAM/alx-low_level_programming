@@ -1,13 +1,11 @@
 #!/bin/bash
 
-c_files=$(find . -maxdepth 1 -type f -name "*.c")
+SRC_FILES=$(find . -maxdepth 1 -type f -name '*.c')
 
-for file in $c_files; do
-  gcc -c $file -o ${file%.c}.o
+for SRC_FILE in $SRC_FILES; do
+    gcc -Wall -pedantic -Werror -Wextra -c "$SRC_FILE"
 done
 
 ar rcs liball.a *.o
 
 rm -f *.o
-
-echo "Static library liball.a created successfully."
