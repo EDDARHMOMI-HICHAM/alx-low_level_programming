@@ -1,36 +1,55 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-#define MAX_NUM_LEN 1024
 
 /**
- * Multiplies two positive numbers.
+ * isNumeric - Check if a string contains only digits
+ * @str: The string to check
  *
- * @param num1 The first number.
- * @param num2 The second number.
- * @return The product of num1 and num2.
+ * Return: 1 if the string contains only digits, 0 otherwise
  */
-int mul(int num1, int num2) {
-if (num1 < 0 || num2 < 0) {
-fprintf(stderr, "Error: Arguments must be positive numbers.\n");
-exit(98);
+int isNumeric(const char *str)
+{
+while (*str)
+{
+if (*str < '0' || *str > '9')
+{
+return 0;
 }
+str++;
+}
+return 1;
+}
+
+/**
+ * multiply - Multiply two numbers
+ * @num1: The first number
+ * @num2: The second number
+ *
+ * Return: The product of num1 and num2
+ */
+int multiply(int num1, int num2)
+{
 return num1 * num2;
 }
-int main(int argc, char *argv[]) {
-int num1, num2, product;
-// Check for the correct number of arguments.
-if (argc != 3) {
-fprintf(stderr, "Error: Usage: mul num1 num2\n");
-exit(98);
+
+int main(int argc, char *argv[])
+{
+if (argc != 3)
+{
+printf("Error\n");
+return 98;
 }
-// Convert the arguments to integers.
-num1 = atoi(argv[1]);
-num2 = atoi(argv[2]);
-// Multiply the two numbers.
-product = mul(num1, num2);
-// Print the result.
-printf("%d\n", product);
-return 0;
+
+if (!isNumeric(argv[1]) || !isNumeric(argv[2]))
+{
+printf("Error\n");
+return 98;
+}
+
+int num1 = atoi(argv[1]);
+int num2 = atoi(argv[2]);
+int result = multiply(num1, num2);
+
+printf("%d\n", result);
+return (0);
 }
