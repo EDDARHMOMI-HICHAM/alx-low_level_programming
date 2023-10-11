@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /**
  * print_name - prints a name using a functer
  * @name: name of the person
