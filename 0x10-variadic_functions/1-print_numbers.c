@@ -7,22 +7,18 @@
  * @...: The variable number of integer arguments
  */
 
+
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
+int i =n;
 va_list ap;
-unsigned int i;
-
-va_start(ap, n);
-
-for (i = 0; i < n; i++) {
-if (separator != NULL && i > 0)
+if (!n)
 {
-printf("%s", separator);
-}
-printf("%d", va_arg(ap, int));
-}
-
-va_end(ap);
-
 printf("\n");
+return;
+}
+va_start(ap,n);
+while(i--)
+printf("%d%s", va_arg(ap, int), i ? (*separator ? *separator : "") : "\n");
+va_end(ap);
 }
