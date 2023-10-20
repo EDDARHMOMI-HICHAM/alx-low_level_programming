@@ -2,13 +2,10 @@ section .data
     hello_msg db "Hello, Holberton",10  ; The message to print
 
 section .text
-    global main
-
-    extern printf
     global _start
 
 _start:
-    push rbp
+    ; Calling printf
     mov rdi, hello_msg
     call printf
 
@@ -17,5 +14,3 @@ _start:
     xor rdi, rdi        ; status: 0
     syscall
 
-main:
-    ret
