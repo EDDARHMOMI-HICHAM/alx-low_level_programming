@@ -18,6 +18,7 @@ void print_binary(unsigned long int n)
 	while (shift >= 0)
 	{
 		unsigned long int bit = n >> shift;
+
 		if (bit & 1)
 		{
 			putchar('1');
